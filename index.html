@@ -185,13 +185,56 @@
         </div>    
             
          <!-- Add a header for the first vis--> 
-    <p style="font-size:20px; font-weight: bold; text-align: center;">First Visualization</p>
+    <p style="font-size:20px; font-weight: bold; text-align: center;">First Visualization(s)</p>
     <p style="text-align: center; font-size:; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">This visualization shows
     the difference between each gender population and how prevelant each one is depending on the age. The purpose of this visualization is to see if there are any common patterns between each demographic or if there was any outlying data for a specific demographic. Overall, the most predominant area is an older aged female adult but as the map is showing, there is a strong correlation between age and prevelance of the number of recipients. Bascially, as the age increases there are more adults within that given age range.  
     </p>
+    
      
     <!-- Div for first visualization with an ID vis1-->  
-        <div id="vis1" class="center"></div>
+    <div style="display: inline-block; width: 50%;">
+        <div id="vis1"></div>
+        <script type="text/javascript">
+           (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-e1b5c340645222a179f02c242e8b6b6a"}, "mark": "rect", "encoding": {"color": {"field": "Count", "type": "quantitative"}, "x": {"field": "age_range", "type": "nominal"}, "y": {"field": "Gender", "type": "nominal"}}, "height": 300, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-e1b5c340645222a179f02c242e8b6b6a": [{"Gender": "Female", "age_range": "(0, 10]", "Count": 4}, {"Gender": "Female", "age_range": "(30, 40]", "Count": 3}, {"Gender": "Female", "age_range": "(40, 50]", "Count": 2}, {"Gender": "Female", "age_range": "(50, 60]", "Count": 13}, {"Gender": "Female", "age_range": "(60, 70]", "Count": 127}, {"Gender": "Female", "age_range": "(70, 80]", "Count": 239}, {"Gender": "Female", "age_range": "(80, 90]", "Count": 161}, {"Gender": "Female", "age_range": "(90, 100]", "Count": 56}, {"Gender": "Female", "age_range": "nan", "Count": 8}, {"Gender": "Male", "age_range": "(0, 10]", "Count": 6}, {"Gender": "Male", "age_range": "(30, 40]", "Count": 1}, {"Gender": "Male", "age_range": "(50, 60]", "Count": 13}, {"Gender": "Male", "age_range": "(60, 70]", "Count": 108}, {"Gender": "Male", "age_range": "(70, 80]", "Count": 135}, {"Gender": "Male", "age_range": "(80, 90]", "Count": 45}, {"Gender": "Male", "age_range": "(90, 100]", "Count": 20}, {"Gender": "Male", "age_range": "nan", "Count": 4}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis5');
+      vegaEmbed("#vis5", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+        </script>
+      </div>
+      <div style="display: inline-block; width: 50%;">
+        <div id="vis2"></div>
+        <script type="text/javascript">
+         
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "concat": [{"data": {"name": "data-32316b2ea638267c9ca1f1187d4e189d"}, "mark": "bar", "encoding": {"color": {"value": "pink"}, "tooltip": {"field": "Count", "type": "quantitative"}, "x": {"axis": {"title": "Count of Age Range"}, "field": "Count", "scale": {"reverse": true}, "type": "quantitative"}, "y": {"axis": {"orient": "right"}, "field": "age_range", "type": "nominal"}}, "height": 500, "selection": {"selector019": {"type": "interval", "bind": "scales", "encodings": ["x", "y"]}}, "title": "female", "width": 500}, {"data": {"name": "data-d51e3f755d202629528bf8013c55f3c5"}, "mark": "bar", "encoding": {"color": {"value": "lightblue"}, "tooltip": {"field": "Count", "type": "quantitative"}, "x": {"axis": {"title": "Count of Age Range"}, "field": "Count", "type": "quantitative"}, "y": {"axis": {"orient": "left"}, "field": "age_range", "type": "nominal"}}, "height": 500, "selection": {"selector020": {"type": "interval", "bind": "scales", "encodings": ["x", "y"]}}, "title": "male", "width": 500}], "spacing": 5, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-32316b2ea638267c9ca1f1187d4e189d": [{"Gender": "Female", "age_range": "(0, 5]", "Count": 4}, {"Gender": "Female", "age_range": "(30, 35]", "Count": 2}, {"Gender": "Female", "age_range": "(35, 40]", "Count": 1}, {"Gender": "Female", "age_range": "(40, 45]", "Count": 1}, {"Gender": "Female", "age_range": "(45, 50]", "Count": 1}, {"Gender": "Female", "age_range": "(55, 60]", "Count": 13}, {"Gender": "Female", "age_range": "(60, 65]", "Count": 47}, {"Gender": "Female", "age_range": "(65, 70]", "Count": 80}, {"Gender": "Female", "age_range": "(70, 75]", "Count": 112}, {"Gender": "Female", "age_range": "(75, 80]", "Count": 127}, {"Gender": "Female", "age_range": "(80, 85]", "Count": 90}, {"Gender": "Female", "age_range": "(85, 90]", "Count": 71}, {"Gender": "Female", "age_range": "(90, 95]", "Count": 36}, {"Gender": "Female", "age_range": "(95, 100]", "Count": 20}], "data-d51e3f755d202629528bf8013c55f3c5": [{"Gender": "Male", "age_range": "(0, 5]", "Count": 6}, {"Gender": "Male", "age_range": "(30, 35]", "Count": 1}, {"Gender": "Male", "age_range": "(50, 55]", "Count": 2}, {"Gender": "Male", "age_range": "(55, 60]", "Count": 11}, {"Gender": "Male", "age_range": "(60, 65]", "Count": 51}, {"Gender": "Male", "age_range": "(65, 70]", "Count": 57}, {"Gender": "Male", "age_range": "(70, 75]", "Count": 75}, {"Gender": "Male", "age_range": "(75, 80]", "Count": 60}, {"Gender": "Male", "age_range": "(80, 85]", "Count": 26}, {"Gender": "Male", "age_range": "(85, 90]", "Count": 19}, {"Gender": "Male", "age_range": "(90, 95]", "Count": 15}, {"Gender": "Male", "age_range": "(95, 100]", "Count": 5}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis4');
+      vegaEmbed("#vis4", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+        </script>
+      </div>
     
      <!-- Add a header for the second vis -->
         <p style="font-size:20px; font-weight: bold;text-align: center;">Second Visualization</p>
@@ -206,22 +249,7 @@
     <!--VegaEmbed function for chart 1/vis1 -->   
     <script>
 
-    (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-e1b5c340645222a179f02c242e8b6b6a"}, "mark": "rect", "encoding": {"color": {"field": "Count", "type": "quantitative"}, "x": {"field": "age_range", "type": "nominal"}, "y": {"field": "Gender", "type": "nominal"}}, "height": 300, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-e1b5c340645222a179f02c242e8b6b6a": [{"Gender": "Female", "age_range": "(0, 10]", "Count": 4}, {"Gender": "Female", "age_range": "(30, 40]", "Count": 3}, {"Gender": "Female", "age_range": "(40, 50]", "Count": 2}, {"Gender": "Female", "age_range": "(50, 60]", "Count": 13}, {"Gender": "Female", "age_range": "(60, 70]", "Count": 127}, {"Gender": "Female", "age_range": "(70, 80]", "Count": 239}, {"Gender": "Female", "age_range": "(80, 90]", "Count": 161}, {"Gender": "Female", "age_range": "(90, 100]", "Count": 56}, {"Gender": "Female", "age_range": "nan", "Count": 8}, {"Gender": "Male", "age_range": "(0, 10]", "Count": 6}, {"Gender": "Male", "age_range": "(30, 40]", "Count": 1}, {"Gender": "Male", "age_range": "(50, 60]", "Count": 13}, {"Gender": "Male", "age_range": "(60, 70]", "Count": 108}, {"Gender": "Male", "age_range": "(70, 80]", "Count": 135}, {"Gender": "Male", "age_range": "(80, 90]", "Count": 45}, {"Gender": "Male", "age_range": "(90, 100]", "Count": 20}, {"Gender": "Male", "age_range": "nan", "Count": 4}]}};
-      var embedOpt = {"mode": "vega-lite"};
 
-      function showError(el, error){
-          el.innerHTML = ('<div class="error" style="color:red;">'
-                          + '<p>JavaScript Error: ' + error.message + '</p>'
-                          + "<p>This usually means there's a typo in your chart specification. "
-                          + "See the javascript console for the full traceback.</p>"
-                          + '</div>');
-          throw error;
-      }
-      const el = document.getElementById('vis1');
-      vegaEmbed("#vis1", spec, embedOpt)
-        .catch(error => showError(el, error));
-    })(vegaEmbed);
         
 
     /* VegaEmbed function for chart 2/vis2 */
