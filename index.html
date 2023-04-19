@@ -186,7 +186,9 @@
             
          <!-- Add a header for the first vis--> 
     <p style="font-size:20px; font-weight: bold; text-align: center;">First Visualization</p>
-    <p style="text-align: center; font-size:; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">Here is a combined visualization of the two different visualizations into one embedded image that relates to the entirety of the map. For instance, a user can press Dorchester to see a pie chart visualization that will show the breakdown of the exact demographic of types of visitations for Dorchester. This interface is functional for the rest of the neighborhoods displayed within the map in the greater Boston area. Essentially when a new neighborhood is clicked, a new updated pie chart is displayed that shows the ratio of each type of visiting that is relayed in this pie chart. </p>
+    <p style="text-align: center; font-size:; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">This visualization shows
+    the difference between each gender population and how prevelant each one is depending on the age. The purpose of this visualization is to see if there are any common patterns between each demographic or if there was any outlying data for a specific demographic. Overall, the most predominant area is an older aged female adult but as the map is showing, there is a strong correlation between age and prevelance of the number of recipients. Bascially, as the age increases there are more adults within that given age range.  
+    </p>
      
     <!-- Div for first visualization with an ID vis1-->  
         <div id="vis1" class="center"></div>
@@ -203,6 +205,23 @@
 
     <!--VegaEmbed function for chart 1/vis1 -->   
     <script>
+
+(function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-e1b5c340645222a179f02c242e8b6b6a"}, "mark": "rect", "encoding": {"color": {"field": "Count", "type": "quantitative"}, "x": {"field": "age_range", "type": "nominal"}, "y": {"field": "Gender", "type": "nominal"}}, "height": 300, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-e1b5c340645222a179f02c242e8b6b6a": [{"Gender": "Female", "age_range": "(0, 10]", "Count": 4}, {"Gender": "Female", "age_range": "(30, 40]", "Count": 3}, {"Gender": "Female", "age_range": "(40, 50]", "Count": 2}, {"Gender": "Female", "age_range": "(50, 60]", "Count": 13}, {"Gender": "Female", "age_range": "(60, 70]", "Count": 127}, {"Gender": "Female", "age_range": "(70, 80]", "Count": 239}, {"Gender": "Female", "age_range": "(80, 90]", "Count": 161}, {"Gender": "Female", "age_range": "(90, 100]", "Count": 56}, {"Gender": "Female", "age_range": "nan", "Count": 8}, {"Gender": "Male", "age_range": "(0, 10]", "Count": 6}, {"Gender": "Male", "age_range": "(30, 40]", "Count": 1}, {"Gender": "Male", "age_range": "(50, 60]", "Count": 13}, {"Gender": "Male", "age_range": "(60, 70]", "Count": 108}, {"Gender": "Male", "age_range": "(70, 80]", "Count": 135}, {"Gender": "Male", "age_range": "(80, 90]", "Count": 45}, {"Gender": "Male", "age_range": "(90, 100]", "Count": 20}, {"Gender": "Male", "age_range": "nan", "Count": 4}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis1');
+      vegaEmbed("#vis1", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
         
 
     /* VegaEmbed function for chart 2/vis2 */
@@ -241,7 +260,7 @@
 	</style>
 </head>
 <body>
-	<p style="font-size:20px; font-weight: bold;text-align: center;">Tableau Visualization of Medical Providers</p>
+	<p style="font-size:20px; font-weight: bold;text-align: center;"> Third Tableau Visualization of Medical Providers</p>
     <p style="text-align: center; font-size:; margin-left:auto; margin-right:auto; width:50%; text-align: justify;">
     This visualization depcited through Tableau is a size chart to show the relative counts for each Medical facility. Being that the greater Boston area has many different medical facilities,
     we thought that the best way to show where the most traffic is occuring is through a relative size chart shown through this bubble chart. Idealy, this chart should help show users who may be potentially interested

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-e1b5c340645222a179f02c242e8b6b6a"}, "mark": "rect", "encoding": {"color": {"field": "Count", "type": "quantitative"}, "x": {"field": "age_range", "type": "nominal"}, "y": {"field": "Gender", "type": "nominal"}}, "height": 300, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-e1b5c340645222a179f02c242e8b6b6a": [{"Gender": "Female", "age_range": "(0, 10]", "Count": 4}, {"Gender": "Female", "age_range": "(30, 40]", "Count": 3}, {"Gender": "Female", "age_range": "(40, 50]", "Count": 2}, {"Gender": "Female", "age_range": "(50, 60]", "Count": 13}, {"Gender": "Female", "age_range": "(60, 70]", "Count": 127}, {"Gender": "Female", "age_range": "(70, 80]", "Count": 239}, {"Gender": "Female", "age_range": "(80, 90]", "Count": 161}, {"Gender": "Female", "age_range": "(90, 100]", "Count": 56}, {"Gender": "Female", "age_range": "nan", "Count": 8}, {"Gender": "Male", "age_range": "(0, 10]", "Count": 6}, {"Gender": "Male", "age_range": "(30, 40]", "Count": 1}, {"Gender": "Male", "age_range": "(50, 60]", "Count": 13}, {"Gender": "Male", "age_range": "(60, 70]", "Count": 108}, {"Gender": "Male", "age_range": "(70, 80]", "Count": 135}, {"Gender": "Male", "age_range": "(80, 90]", "Count": 45}, {"Gender": "Male", "age_range": "(90, 100]", "Count": 20}, {"Gender": "Male", "age_range": "nan", "Count": 4}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
