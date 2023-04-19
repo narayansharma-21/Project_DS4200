@@ -192,7 +192,8 @@
     
      
     <!-- Div for first visualizations with an ID vis1-->  
-    <div style="display: inline-block; width: 50%;">
+    <div style="display:flex; justify-content:center;">
+        <div style="margin-right: 20px;">
         <div id="vis2"></div>
         <script type="text/javascript">
            (function(vegaEmbed) {
@@ -213,7 +214,7 @@
     })(vegaEmbed);
         </script>
       </div>
-      <div style="display: inline-block; width: 50%;">
+      <div>
         <div id="vis3"></div>
         <script type="text/javascript">
          
@@ -234,6 +235,7 @@
         .catch(error => showError(el, error));
     })(vegaEmbed);
         </script>
+      </div>
       </div>
     
      <!-- Add a header for the second vis -->
