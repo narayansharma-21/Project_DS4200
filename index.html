@@ -147,7 +147,7 @@
 
         <p style="font-size:20px; font-weight: bold; text-align: center;">Combined visualizations embedded of Types of Visits Per Neighborhood</p>
     <!-- Div for first visualization with an ID vis1-->  
-    <div id="vis1" class="center"></div>
+    <div id="vis3" class="center"></div>
     <script>
         (function(vegaEmbed) {
       var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "hconcat": [{"data": {"url": "https://bostonopendata-boston.opendata.arcgis.com/datasets/boston::boston-neighborhoods.geojson?outSR=%7B%22latestWkid%22%3A2249%2C%22wkid%22%3A102686%7D", "format": {"property": "features", "type": "json"}}, "mark": {"type": "geoshape", "stroke": "white"}, "encoding": {"color": {"condition": {"field": "properties.Name", "type": "nominal", "selection": "selector001"}, "value": "lightgray"}, "tooltip": {"field": "properties.Name", "type": "nominal"}}, "projection": {"reflectY": true, "type": "identity"}, "selection": {"selector001": {"type": "multi", "encodings": ["color"]}}}, {"data": {"name": "data-3145dda8ae9869b229c243eb8a7a4968"}, "mark": "arc", "encoding": {"color": {"condition": {"field": "Program Participation", "type": "nominal", "selection": "selector001"}, "value": "lightgray"}, "theta": {"field": "Name", "type": "quantitative"}, "tooltip": [{"field": "Program Participation", "type": "nominal"}, {"field": "Program Percentage", "type": "quantitative"}]}, "transform": [{"filter": {"selection": "selector001"}}]}], "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-3145dda8ae9869b229c243eb8a7a4968": [{"Program Participation": "Friendly Helping", "Mailing State/Province": 63, "Zip": 63, "Name": 63, "Program Percentage": 0.09}, {"Program Participation": "Friendly Helping; Medical Escort", "Mailing State/Province": 5, "Zip": 5, "Name": 5, "Program Percentage": 0.01}, {"Program Participation": "Friendly Visiting", "Mailing State/Province": 372, "Zip": 372, "Name": 372, "Program Percentage": 0.55}, {"Program Participation": "Friendly Visiting; Friendly Helping", "Mailing State/Province": 24, "Zip": 24, "Name": 24, "Program Percentage": 0.04}, {"Program Participation": "Friendly Visiting; Friendly Helping; Medical Escort", "Mailing State/Province": 9, "Zip": 9, "Name": 9, "Program Percentage": 0.01}, {"Program Participation": "Friendly Visiting; Medical Escort", "Mailing State/Province": 20, "Zip": 20, "Name": 20, "Program Percentage": 0.03}, {"Program Participation": "Friendly Visiting; Relaxing Through the Arts", "Mailing State/Province": 1, "Zip": 1, "Name": 1, "Program Percentage": 0.0}, {"Program Participation": "Medical Escort", "Mailing State/Province": 165, "Zip": 165, "Name": 165, "Program Percentage": 0.24}, {"Program Participation": "No Current Programs", "Mailing State/Province": 17, "Zip": 17, "Name": 17, "Program Percentage": 0.03}]}};
@@ -161,8 +161,8 @@
                           + '</div>');
           throw error;
       }
-      const el = document.getElementById('vis1');
-      vegaEmbed("#vis1", spec, embedOpt)
+      const el = document.getElementById('vis3');
+      vegaEmbed("#vis3", spec, embedOpt)
         .catch(error => showError(el, error));
     })(vegaEmbed);
 
@@ -206,7 +206,7 @@
     <!--VegaEmbed function for chart 1/vis1 -->   
     <script>
 
-(function(vegaEmbed) {
+    (function(vegaEmbed) {
       var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-e1b5c340645222a179f02c242e8b6b6a"}, "mark": "rect", "encoding": {"color": {"field": "Count", "type": "quantitative"}, "x": {"field": "age_range", "type": "nominal"}, "y": {"field": "Gender", "type": "nominal"}}, "height": 300, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-e1b5c340645222a179f02c242e8b6b6a": [{"Gender": "Female", "age_range": "(0, 10]", "Count": 4}, {"Gender": "Female", "age_range": "(30, 40]", "Count": 3}, {"Gender": "Female", "age_range": "(40, 50]", "Count": 2}, {"Gender": "Female", "age_range": "(50, 60]", "Count": 13}, {"Gender": "Female", "age_range": "(60, 70]", "Count": 127}, {"Gender": "Female", "age_range": "(70, 80]", "Count": 239}, {"Gender": "Female", "age_range": "(80, 90]", "Count": 161}, {"Gender": "Female", "age_range": "(90, 100]", "Count": 56}, {"Gender": "Female", "age_range": "nan", "Count": 8}, {"Gender": "Male", "age_range": "(0, 10]", "Count": 6}, {"Gender": "Male", "age_range": "(30, 40]", "Count": 1}, {"Gender": "Male", "age_range": "(50, 60]", "Count": 13}, {"Gender": "Male", "age_range": "(60, 70]", "Count": 108}, {"Gender": "Male", "age_range": "(70, 80]", "Count": 135}, {"Gender": "Male", "age_range": "(80, 90]", "Count": 45}, {"Gender": "Male", "age_range": "(90, 100]", "Count": 20}, {"Gender": "Male", "age_range": "nan", "Count": 4}]}};
       var embedOpt = {"mode": "vega-lite"};
 
