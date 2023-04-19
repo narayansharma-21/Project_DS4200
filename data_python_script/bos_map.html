@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://bostonopendata-boston.opendata.arcgis.com/datasets/boston::boston-neighborhoods.geojson?outSR=%7B%22latestWkid%22%3A2249%2C%22wkid%22%3A102686%7D", "format": {"property": "features", "type": "json"}}, "mark": {"type": "geoshape", "stroke": "white"}, "encoding": {"color": {"condition": {"field": "properties.Name", "type": "nominal", "selection": "selector004"}, "value": "lightgray"}, "tooltip": {"field": "properties.Name", "type": "nominal"}}, "projection": {"reflectY": true, "type": "identity"}, "selection": {"selector004": {"type": "multi", "encodings": ["color"]}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
